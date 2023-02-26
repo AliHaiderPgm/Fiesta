@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
+import Router from 'Pages/Router';
+import { ThemeProvider } from '@mui/material/styles';
+import 'Components/Global'
 
+import theme from 'Components/muiTheme'
+import { ToastContainer } from 'react-toastify';
+import { AuthContextProvider } from 'Context/AuthContext';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AuthContextProvider>
+        <ThemeProvider theme={theme}>
+          <Router />
+          <ToastContainer
+            position="bottom-left"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+        </ThemeProvider>
+      </AuthContextProvider>
+    </>
   );
 }
 

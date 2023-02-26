@@ -1,0 +1,21 @@
+@import './Scss/bootstrap';
+@import './Scss/color';
+@import './Scss/login';
+.bg-primaryColor{
+    background-color: $primaryColor;
+}
+.bg-secondaryColor{
+    background-color: $secondaryColor;
+}
+.color-primaryColor{
+    color:$primaryColor;
+}
+.color-secondaryColor{
+    color: $secondaryColor;
+}
+.bg-navColor{
+    background-color: #deb887;
+}
+.color-whiteColor{
+    color: #fff;
+}
